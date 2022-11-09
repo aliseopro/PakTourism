@@ -19,11 +19,11 @@ contract Review {
         bool IspackageReviewedByUser;
     }
     
-    package newpackage;
+    Package Newpackage;
     UserInput newInput;
     uint public Totalpackages;
     
-    mapping(uint => package) packageDetails;
+    mapping(uint => Package) packageDetails;
     uint[]    public packageIds;
     mapping(uint => mapping (address => UserInput)) userReview;
    
@@ -40,15 +40,15 @@ contract Review {
          Totalpackages++;
          uint pid = Totalpackages + 111110;
         
-        newpackage.packageName = pname;
-        newpackage.packagePrice = price;
-        newpackage.packageHash = imagehash;
-        newpackage.avgRating = 0;
-        newpackage.totalReviewed = 0;
-        newpackage.users.push(msg.sender);
+        Newpackage.packageName = pname;
+        Newpackage.packagePrice = price;
+        Newpackage.packageHash = imagehash;
+        Newpackage.avgRating = 0;
+        Newpackage.totalReviewed = 0;
+        Newpackage.users.push(msg.sender);
 
         packageIds.push(pid);
-        packageDetails[pid] = newpackage;
+        packageDetails[pid] = Newpackage;
         
         emit addpackageEvent(Totalpackages, pname);
     }
@@ -56,7 +56,7 @@ contract Review {
         return Totalpackages;
     }
     
-    function getpackage(uint pid) public view returns (package memory) {
+    function getpackage(uint pid) public view returns (Package memory) {
         return packageDetails[pid];
     }
      
@@ -66,7 +66,7 @@ contract Review {
         require(urating > 0 && urating <= 5, "package rating should be in 1-5 range !");
         require(userReview[packageId][msg.sender].IspackageReviewedByUser == false, "package already reviewed by user !");
         
-        package storage oldpackage = packageDetails[packageId];
+        Package storage oldpackage = packageDetails[packageId];
         oldpackage.avgRating += urating * 10;
         oldpackage.totalReviewed++;
         oldpackage.users.push(msg.sender);
