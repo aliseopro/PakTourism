@@ -20542,12 +20542,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xdB1D1Ad9E3aBaeb808ea6Dcd598747cCA5190648",
-      "transactionHash": "0x69322e1aaadbd7ad6e3684b8016ef4de8a6fe4e5f74e2be0d86f8dbfa22dd679"
+      "address": "0x52234e5c8705cb0505976eEfB6E6E64b3B934f6f",
+      "transactionHash": "0x9517c9427d63b52a2a8c023251f0c0abe5022d4a6f3497892d865e69b25648fe"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-09T16:12:40.911Z",
+  "updatedAt": "2022-11-12T01:26:22.336Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
