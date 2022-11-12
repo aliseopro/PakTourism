@@ -8,7 +8,7 @@ app.use(express.json());
 const username = "zelda";
 const password = "zelda";
 const cluster = "cluster0";
-const dbname = "sample_airbnb";
+const dbname = "User";
 const uri = `mongodb+srv://${username}:${password}@${cluster}.v6f1uwr.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 
 mongoose.connect(uri,
